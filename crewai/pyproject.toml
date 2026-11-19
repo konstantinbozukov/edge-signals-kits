@@ -1,0 +1,13 @@
+[project]
+name = "edge-signals-crewai-example"
+version = "0.1.0"
+description = "CrewAI tool example for Edge Signals Token Verdict"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

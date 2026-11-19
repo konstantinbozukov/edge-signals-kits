@@ -1,0 +1,45 @@
+{
+  "name": "@konstantinbozukov/plugin-edge-signals",
+  "version": "0.1.0",
+  "description": "ElizaOS plugin: Token Verdict before swaps (Edge Signals x402)",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "lint": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@elizaos/core": ">=2.0.0"
+  },
+  "optionalDependencies": {
+    "@x402/evm": "^2.31.0",
+    "@x402/fetch": "^2.31.0",
+    "viem": "^2.31.0"
+  },
+  "devDependencies": {
+    "@elizaos/core": "^2.0.5",
+    "@types/node": "^22.10.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^3.0.5"
+  },
+  "agentConfig": {
+    "pluginType": "elizaos:plugin:1.0.0",
+    "pluginParameters": {
+      "X402_PAYER_PRIVATE_KEY": {
+        "type": "string",
+        "description": "Base wallet private key for x402 USDC payments to Edge Signals. Never commit.",
+        "sensitive": true
+      },
+      "EDGE_SIGNALS_CHAIN": {
+        "type": "string",
+        "description": "Default EVM chain for Token Verdict",
+        "defaultValue": "base"
+      }
+    }
+  },
+  "license": "MIT"
+}

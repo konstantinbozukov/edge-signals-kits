@@ -1,0 +1,90 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "cursor/**"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  langchain-js:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: langchain/js
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+  elizaos:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: elizaos
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm install
+      - run: npm run lint
+      - run: npm run build
+      - run: npm test
+
+  langchain-python:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: langchain/python
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: python3 -m pytest
+
+  crewai:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: crewai
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: pytest
+
+  openai-agents:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: openai-agents
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e ".[dev]"
+      - run: pytest
+
+  quickstarts-node-syntax:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: quickstarts
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: node --check node.mjs
