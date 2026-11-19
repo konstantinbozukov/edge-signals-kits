@@ -5,7 +5,9 @@
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
@@ -41,5 +43,17 @@
       }
     }
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/konstantinbozukov/edge-signals-kits.git",
+    "directory": "elizaos"
+  },
+  "homepage": "https://github.com/konstantinbozukov/edge-signals-kits/tree/main/elizaos",
+  "bugs": {
+    "url": "https://github.com/konstantinbozukov/edge-signals-kits/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }
