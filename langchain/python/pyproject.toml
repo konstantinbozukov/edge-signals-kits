@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "langchain-edge-signals"
+version = "0.1.0"
+description = "LangChain tools for Edge Signals Token Verdict (x402 USDC on Base)"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [{ name = "Konstantin Bozukov", email = "konstantin@apexwire.co" }]
+keywords = ["langchain", "x402", "edge-signals", "token-verdict"]
+dependencies = [
+  "langchain-core>=0.3.0",
+  "x402[httpx,evm]>=2.20.0",
+  "eth-account>=0.13.0",
+  "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "respx>=0.21"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langchain_edge_signals"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

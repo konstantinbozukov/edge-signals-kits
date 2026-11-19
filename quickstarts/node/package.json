@@ -1,0 +1,18 @@
+{
+  "name": "edge-signals-quickstart-node",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "viem": "^2.21.0",
+    "x402-fetch": "^1.2.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0",
+    "tsx": "^4.19.0",
+    "vitest": "^2.1.0"
+  },
+  "scripts": {
+    "start": "tsx token-verdict.ts",
+    "test": "vitest run"
+  }
+}

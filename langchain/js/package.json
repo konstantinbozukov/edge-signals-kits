@@ -1,0 +1,47 @@
+{
+  "name": "@konstantinbozukov/langchain-edge-signals",
+  "version": "0.1.0",
+  "description": "LangChain tools for Edge Signals Token Verdict (x402 USDC on Base)",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "langchain",
+    "x402",
+    "edge-signals",
+    "token-verdict"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@langchain/core": "^0.3.0"
+  },
+  "dependencies": {
+    "viem": "^2.21.0",
+    "x402-fetch": "^1.2.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@langchain/core": "^0.3.0",
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

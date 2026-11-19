@@ -1,0 +1,27 @@
+{
+  "edgeSignalsBaseUrl": "https://signals.edge.report",
+  "pathmintMcpUrl": "https://pathmint.edge.report/mcp",
+  "edgeSignalsMcpUrl": "https://signals.edge.report/mcp",
+  "x402DiscoveryUrl": "https://signals.edge.report/.well-known/x402",
+  "payTo": "0xE2520f1497ee47645072a6214304807BC3340D58",
+  "network": "eip155:8453",
+  "facilitator": "https://api.cdp.coinbase.com/platform/v2/x402",
+  "tokenVerdict": {
+    "path": "/v1/token-verdict",
+    "priceUsd": "0.01",
+    "method": "GET",
+    "queryParams": {
+      "token": "ERC-20 contract (required)",
+      "chain": "base | ethereum | bsc | arbitrum | optimism | polygon (default base)"
+    }
+  },
+  "exampleBaseUsdc": "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913",
+  "walletEnvVars": {
+    "node": "EVM_PRIVATE_KEY or X402_EVM_PRIVATE_KEY",
+    "python": "EVM_PRIVATE_KEY or X402_EVM_PRIVATE_KEY"
+  },
+  "mcpRegistry": {
+    "edgeSignals": "io.github.konstantinbozukov/edge-signals",
+    "pathmint": "io.github.konstantinbozukov/pathmint"
+  }
+}
